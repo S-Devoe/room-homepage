@@ -1,5 +1,4 @@
 import React from 'react'
-import './room.css'
 import data from '../../data'
 
 

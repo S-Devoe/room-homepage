@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import './App.css';
 import Furniture from './Components/Furniture/Furniture';
 import Me from './Components/Me/Me';
 import Navbar from './Components/Navbar';
