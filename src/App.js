@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import './App.css';
+import Furniture from './Components/Furniture/Furniture';
+import Me from './Components/Me/Me';
+import Navbar from './Components/Navbar';
+import Room from './Components/Room/Room';
 
 function App() {
+  const [selectedArticle, setSelectedArticle] = useState(0)
+
+  const isMobile = useMediaQuery({query: "(max-width: 950px)"})
+
+  const handleNext = () =>{
+    if (selectedArticle === 2){
+      setSelectedArticle(0)
+    }
+    else{
+      setSelectedArticle(selectedArticle + 1)
+    }
+  }
+
+  const handlePrevious = () =>{
+    if (selectedArticle === 0){
+      setSelectedArticle(2)
+    }
+    else{
+      setSelectedArticle(selectedArticle - 1)
+    }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Room isMobile={isMobile} handleNext={handleNext} handlePrevious={handlePrevious} selectedArticle={selectedArticle}/>
+      <Furniture />
+      <Me/>
     </div>
   );
 }

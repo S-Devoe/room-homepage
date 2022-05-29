@@ -1,13 +1,145 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+
+:root {
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*, html, body,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Spartan',sans-serif;
+
+}
+
+.App{
+  position: relative;
+  
+}
+
+/* Navbar CSS is here */
+.nav-container{
+  z-index: 9;
+  display: flex;
+  position: absolute;
+  padding: 2rem 2rem 0;
+  width: 100%;
+  /* text-align: center; */
+}
+
+
+.nav-container .lg{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+}
+
+.nav-container .lg .img{
+  cursor: pointer;
+}
+
+.nav-container .lg .logo{
+  font-size: 28px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-container .navitem{
+  display: flex;
+  height: 14vh;
+  width: 100vw;
+  background-color: var(--White);
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem 0 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: .5s;
+}
+
+.nav-container .show-nav{
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+.nav-container .navitem ul{
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-container .navitem ul li{
+  padding-left: 1rem;
+  list-style-type: none;
+}
+
+.nav-container .navitem img{
+  cursor: pointer;
+  block-size: 25px;
+}
+
+
+
+
+@media screen and (min-width: 950px){
+
+  .nav-container{
+    padding: 1.4rem 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center; */
+  }
+
+    .nav-container .lg .img{
+      display: none;
+    }
+
+    .nav-container .lg .logo{
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2rem;
+    }
+
+    .nav-container .navitem{
+      visibility: visible;
+      opacity: 1;
+      background-color: transparent;
+      width: 100%;
+      /* padding: 6rem 4rem 0 0 ; */
+      z-index: 2;
+    }
+
+    .nav-container .navitem ul{
+      top: 38%;
+      left: 15%;
+      right: 0;
+      color: var(--White);
+      font-size: .8rem;
+      font-weight: 500;
+    }
+
+
+    .nav-container .navitem img{
+      display: none;
+    }
 }

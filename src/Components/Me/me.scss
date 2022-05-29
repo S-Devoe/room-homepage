@@ -1,0 +1,14 @@
+@import "../../index.css";
+
+.me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 2.4rem;
+    font-size: .9rem;
+    display: block;
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+}
